@@ -1,7 +1,13 @@
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-})
+  css: {
+    modules: {
+      // Class names stay kebab-case in CSS (as in the Blazor source)
+      // and are read as camelCase in TSX: .resin-title -> styles.resinTitle
+      localsConvention: 'camelCaseOnly',
+    },
+  },
+});

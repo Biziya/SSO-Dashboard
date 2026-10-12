@@ -1,0 +1,34 @@
+/*
+ * Shared design values.
+ *
+ * The Blazor app loaded MudBlazor's stylesheet and theme, which defined the
+ * body typography and the palette used by MudButton / MudAlert / MudChip /
+ * MudSelect. Those defaults are reproduced here so the shared controls in
+ * src/components/Mud look the same without pulling in MudBlazor.
+ */
+:root {
+  /* MudBlazor default theme */
+  --mud-text-primary: rgba(66, 66, 66, 1);
+  --mud-text-secondary: rgba(0, 0, 0, 0.54);
+  --mud-lines-inputs: rgba(189, 189, 189, 1);
+  --mud-action-default: rgba(0, 0, 0, 0.54);
+  --mud-primary: #594ae2;
+  --mud-info: #2196f3;
+  --mud-info-darken: #0c80df;
+  --mud-success: #00c853;
+  --mud-success-darken: #00a344;
+  --mud-warning: #ff9800;
+  --mud-error: #f44336;
+  --mud-font-family: Roboto, Helvetica, Arial, sans-serif;
+  --mud-elevation-2: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  --mud-elevation-4: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  --mud-elevation-8: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+
+  /* Application shell (MainLayout) */
+  --shell-dark: #13261f;
+  --shell-green: #17a163;
+  --shell-green-bright: #24bd78;
+  --shell-link: #087844;
+  --page-background: #f4f7f6;
+  --sidebar-width: 260px;
+}

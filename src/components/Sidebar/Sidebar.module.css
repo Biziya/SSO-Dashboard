@@ -1,0 +1,187 @@
+/* Ported from Components/Layout/MainLayout.razor.css and its inline <style>. */
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 10px;
+  background: var(--shell-dark);
+  color: #fff;
+  overflow-y: auto;
+  z-index: 20;
+  transition: width 0.25s ease, min-width 0.25s ease, transform 0.25s ease;
+}
+
+.sidebar-hidden {
+  width: 0;
+  min-width: 0;
+  transform: translateX(-100%);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 8px 24px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--shell-green);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.brand-text {
+  display: grid;
+  gap: 2px;
+}
+
+.brand-text strong {
+  font-size: 14px;
+}
+
+.brand-text small {
+  color: #98afa5;
+  font-size: 12px;
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 6px;
+}
+
+.nav-item {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  border-radius: 10px;
+  color: #c7d5cf;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: rgba(23, 161, 99, 0.18);
+  color: #fff;
+}
+
+.nav-item.active {
+  box-shadow: inset 3px 0 var(--shell-green-bright);
+}
+
+.nav-item.active .nav-icon {
+  color: var(--shell-green-bright);
+}
+
+.sidebar-user {
+  margin-top: auto;
+  padding: 12px;
+  font-size: 11px;
+  color: #666;
+  border-top: 1px solid #ddd;
+  word-break: break-all;
+}
+
+/* Edge tab */
+.edge-toggle {
+  position: fixed;
+  top: 40%;
+  z-index: 9999;
+  width: 14px;
+  height: 100px;
+  border: none;
+  border-radius: 0 14px 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--shell-dark);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  transition: left 0.25s ease, background 0.2s ease;
+}
+
+.edge-toggle-open {
+  left: var(--sidebar-width);
+  border-radius: 0 12px 12px 0;
+  width: 20px;
+}
+
+.edge-toggle-closed {
+  left: 0;
+}
+
+.edge-toggle:hover {
+  background: var(--shell-green);
+  width: 20px;
+}
+
+/* Medium screens: icons only (labels and brand text hidden). */
+@media (max-width: 1050px) {
+  .sidebar {
+    padding-inline: 12px;
+  }
+
+  .brand {
+    justify-content: center;
+    padding-inline: 0;
+  }
+
+  .brand-text,
+  .nav-label {
+    display: none;
+  }
+}
+
+/* Small screens: the sidebar becomes a horizontal bar above the page. */
+@media (max-width: 700px) {
+  .sidebar {
+    position: sticky;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    overflow-x: auto;
+  }
+
+  .brand {
+    padding: 0 8px 0 0;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    gap: 5px;
+  }
+
+  /* Deviation from the Blazor CSS: there the closed sidebar still took its
+     full height in the page flow on phones, leaving a blank band above the
+     page. It collapses completely here. */
+  .sidebar-hidden {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}

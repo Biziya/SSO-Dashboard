@@ -1,0 +1,685 @@
+/* Ported from EditPlantDashboardLimited.razor.css: Blazor "::deep" rules become descendant rules of .dashboard-shell. */
+
+.dashboard-shell,
+.dashboard-shell * {
+  box-sizing: border-box;
+}
+
+.dashboard-shell {
+  --line: #d4ded9;
+  --green: #078d4c;
+  --red: #df2028;
+  --page-bg: #f2f7f5;
+  --header-bg: #f8faf9;
+  --orange: #ffcc00;
+  --light-grey: #ccc;
+  --blue: #0087bd;
+  --gap: 10px;
+  min-height: 100vh;
+  color: #111;
+  background: var(--page-bg);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(550px, 1.2fr) minmax(560px, 1.4fr);
+  gap: var(--gap);
+  align-items: stretch;
+}
+
+.dashboard-shell .dashboard-column {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.dashboard-shell .card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+}
+
+.dashboard-shell .card h2 {
+  margin: 0;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  text-align: center;
+}
+
+.dashboard-shell table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.dashboard-shell th,
+.dashboard-shell td {
+  padding: 6px 7px;
+  border: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.dashboard-shell th {
+  background: var(--header-bg);
+}
+
+.dashboard-shell .top-left-grid,
+.dashboard-shell .split-grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.dashboard-shell .top-left-grid {
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+}
+
+.dashboard-shell .top-left-grid > .card {
+  height: 150px;
+}
+
+.dashboard-shell .split-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dashboard-shell .tank-grid {
+  grid-template-columns: minmax(150px, 0.6fr) minmax(0, 1.4fr);
+}
+
+.dashboard-shell .d-series-card {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.dashboard-shell .d-series-item {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-right: 1px solid var(--line);
+}
+
+.dashboard-shell .d-series-item:last-child {
+  border-right: 0;
+}
+
+.dashboard-shell .d-series-item strong {
+  font-size: 12px;
+}
+
+.dashboard-shell .status-tile {
+  width: 54px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--green);
+  border-radius: 7px;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.dashboard-shell .resin-transfer-table {
+  height: 100%;
+}
+
+.dashboard-shell .resin-transfer-table th,
+.dashboard-shell .resin-transfer-table td {
+  padding: 0;
+}
+
+.dashboard-shell .resin-title {
+  height: 28px;
+  font-size: 12px;
+  background-color: #ccc;
+}
+
+.dashboard-shell .title-bg-color {
+  background-color: #ccc;
+}
+
+.dashboard-shell .value-heading {
+  width: 26%;
+}
+
+.dashboard-shell .transfer-heading {
+  width: 23%;
+  height: 26px;
+  font-size: 12px;
+}
+
+.dashboard-shell .section-value-table td:last-child {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.dashboard-shell .section-value-table td.editable-cell > .edit-input {
+  max-width: none;
+}
+
+.dashboard-shell .front-end-table tr {
+  height: 35px;
+}
+
+.dashboard-shell .tank-position-grid {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.dashboard-shell .tank-position-item {
+  min-height: 80px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--header-bg);
+}
+
+.dashboard-shell .tank-position-item:nth-child(5) {
+  grid-column: 1;
+}
+
+.dashboard-shell .tank-position-item:nth-child(6) {
+  grid-column: 4;
+}
+
+.dashboard-shell .tank-letter {
+  width: 34px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: #444444;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.dashboard-shell .tank-position-item small {
+  margin-top: 3px;
+}
+
+.dashboard-shell .tank-notes {
+  padding: 0 10px 8px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-size: 8px;
+}
+
+.dashboard-shell .table-card {
+  overflow-x: auto;
+}
+
+.dashboard-shell .operations-table {
+  min-width: 680px;
+}
+
+.dashboard-shell .storage-table {
+  min-width: 500px;
+}
+
+.dashboard-shell .operations-table th,
+.dashboard-shell .operations-table td {
+  white-space: nowrap;
+}
+
+.dashboard-shell .samples-card {
+  min-height: 150px;
+}
+
+.dashboard-shell .comment-update-section {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+
+.dashboard-shell .comment-card {
+  width: 100%;
+  min-height: 90px;
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+}
+
+.dashboard-shell .comment-card label {
+  display: grid;
+  place-items: center;
+  border-right: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dashboard-shell .comment-card textarea {
+  width: 100%;
+  min-height: 90px;
+  padding: 10px;
+  border: 0;
+  outline: 0;
+  resize: vertical;
+  color: inherit;
+  background: #fff;
+  font: inherit;
+}
+
+.dashboard-shell .comment-card textarea:focus {
+  box-shadow: inset 0 0 0 2px var(--green);
+}
+
+.dashboard-shell .comment-value {
+  min-height: 90px;
+  padding: 10px;
+  white-space: pre-wrap;
+}
+
+.dashboard-shell .edit-input {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: inherit;
+}
+
+.dashboard-shell .edit-input:focus {
+  box-shadow: inset 0 -2px 0 var(--green);
+}
+
+.dashboard-shell td.editable-cell {
+  padding: 0;
+}
+
+.dashboard-shell td.editable-cell > .edit-input {
+  width: 100%;
+  height: 100%;
+  min-height: 25px;
+  display: block;
+  padding: 6px 7px;
+}
+
+.dashboard-shell td.editable-cell > .edit-input:focus {
+  box-shadow: none;
+}
+
+.dashboard-shell td.editable-cell:focus-within {
+  box-shadow: inset 0 0 0 2px var(--green);
+}
+
+.dashboard-shell .status-tile .edit-input {
+  color: #fff;
+  background: transparent;
+  font-weight: 800;
+  text-align: center;
+}
+
+.dashboard-shell .update-button {
+  width: 180px;
+  min-height: 42px;
+  border: 2px solid #111;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.dashboard-shell .update-button:hover {
+  background: var(--page-bg);
+}
+
+.dashboard-shell .update-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.dashboard-shell .ok-indicator {
+  color: var(--green);
+}
+
+.dashboard-shell .danger-text {
+  color: var(--red);
+}
+
+.dashboard-shell .info-text {
+  color: var(--blue);
+}
+
+@media (max-width: 1250px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 850px) {
+  .dashboard-grid,
+  .dashboard-shell .top-left-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 650px) {
+  .dashboard-shell {
+    padding: 5px;
+  }
+
+  .dashboard-shell .split-grid,
+  .dashboard-shell .tank-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-shell .comment-card {
+    grid-template-columns: 75px minmax(0, 1fr);
+  }
+
+  .dashboard-shell .update-button {
+    width: 100%;
+  }
+
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px 4px 8px;
+}
+
+.header-row h2 {
+  margin: 0;
+}
+
+.header-row h4 {
+  margin: 0;
+}
+
+.dashboard-shell .status-tile {
+  position: relative;
+}
+
+.dashboard-shell .status-tile .value-text {
+  line-height: 1;
+}
+
+.dashboard-shell .arrow-symbol {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--orange);
+  font-weight: 900;
+}
+
+.dashboard-shell .resin-card {
+  overflow-x: auto;
+}
+
+.dashboard-shell .resin-transfer-table th,
+.dashboard-shell .resin-transfer-table td {
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.dashboard-shell .resin-transfer-table td.editable-cell > .edit-input {
+  min-width: 25px;
+  padding: 4px 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dashboard-shell .top-left-grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(230px, 0.95fr);
+}
+
+.dashboard-shell .resin-transfer-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.dashboard-shell .resin-transfer-table .resin-number-col {
+  width: 24px;
+}
+
+.dashboard-shell .resin-transfer-table th,
+.dashboard-shell .resin-transfer-table td {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dashboard-shell .resin-transfer-table td.editable-cell > .edit-input {
+  width: 100%;
+  min-width: 0;
+  padding: 4px 2px;
+  text-align: center;
+}
+
+.dashboard-shell .metric-value-wrapper {
+  width: 100%;
+  min-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 0 6px;
+}
+
+.dashboard-shell .metric-value-input {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 0;
+  text-align: right;
+}
+
+.dashboard-shell .metric-measurement {
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding-top: 5px;
+}
+
+.dashboard-shell .ok-indicator.status-ok {
+  color: var(--green);
+}
+
+.dashboard-shell .ok-indicator.status-nok {
+  color: var(--red);
+}
+
+.dashboard-shell .ok-indicator.status-empty {
+  color: transparent;
+}
+
+.dashboard-shell .tank-level-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.dashboard-shell .tank-level-table .group-title-header {
+  width: 38px;
+  min-width: 38px;
+  max-width: 38px;
+  padding: 0;
+}
+
+.dashboard-shell .tank-level-table td.group-title-cell {
+  position: relative;
+  width: 38px;
+  min-width: 38px;
+  max-width: 38px;
+  padding: 0;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.dashboard-shell .tank-level-table .group-title-text {
+  position: absolute;
+  inset: 6px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.dashboard-shell .tank-level-table .group-title-text strong {
+  display: block;
+  font-size: 11px;
+}
+
+.dashboard-shell .tank-level-table .group-title-text span {
+  display: block;
+}
+
+.dashboard-shell .tank-level-table .group-title-text sub {
+  font-size: 0.7em;
+}
+
+.dashboard-shell .tank-level-table td.tank-name-cell {
+  padding: 6px 7px;
+  text-align: left !important;
+  vertical-align: middle;
+}
+
+.dashboard-shell .front-end-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.dashboard-shell .front-end-table col.front-end-label-col {
+  width: 25%;
+}
+
+.dashboard-shell .front-end-table col.front-end-name-col {
+  width: 40%;
+}
+
+.dashboard-shell .front-end-table col.front-end-value-col {
+  width: 35%;
+}
+
+.dashboard-shell .lab-events-container {
+  width: 100%;
+  height: 100%;
+}
+
+.dashboard-shell .lab-events-table {
+  width: 100%;
+  height: 72%;
+  table-layout: fixed;
+}
+
+.dashboard-shell .lab-events-table tbody,
+.dashboard-shell .lab-events-table tr {
+  height: 100%;
+}
+
+.dashboard-shell .lab-events-label {
+  width: 25%;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.dashboard-shell .lab-events-value {
+  height: 100%;
+  padding: 0;
+}
+
+.dashboard-shell .lab-events-textarea {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  border: 0;
+  outline: 0;
+  resize: none;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.dashboard-shell .rich-comment-card {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  width: 100%;
+}
+
+.dashboard-shell .vertical-label-wrapper {
+  width: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-grey);
+}
+
+.dashboard-shell .vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* --- Inline styles and small rules from the Blazor markup --- */
+.center {
+  text-align: center;
+}
+
+.small-label {
+  font-size: 12px;
+}
+
+.dashboard-shell .tank-level-table {
+  background-color: white;
+}
+
+.operation-row {
+  height: 32px;
+}
+
+.process-column {
+  width: 11%;
+}
+
+.process-name {
+  white-space: pre-line;
+}
+
+.dashboard-shell .storage-row {
+  display: flex;
+  gap: 4px;
+  padding-bottom: 6px;
+}
+
+.width15 {
+  width: 15%;
+}
+
+.width40 {
+  width: 40%;
+}
+
+.dashboard-shell .comment-card .vertical-text {
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 700;
+}
