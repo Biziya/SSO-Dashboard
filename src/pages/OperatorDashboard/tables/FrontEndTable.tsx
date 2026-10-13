@@ -2,15 +2,6 @@ import { cx } from '../../../utils/cx';
 import type { FrontEndMetric } from './types';
 import styles from './OperatorTables.module.css';
 
-function FrontEndValue({ metric }: { metric: FrontEndMetric }) {
-  return (
-    <div className={styles.metricValueWrapper}>
-      <strong className={styles.metricValueInput}>{metric.value}</strong>
-      {metric.measurement !== '' ? <span className={styles.metricMeasurement}>{metric.measurement}</span> : null}
-    </div>
-  );
-}
-
 export function FrontEndTable({ metrics }: { metrics: FrontEndMetric[] }) {
   const pumpCount = metrics.filter((metric) => metric.isPump).length;
   const firstPumpIndex = metrics.findIndex((metric) => metric.isPump);
@@ -36,7 +27,10 @@ export function FrontEndTable({ metrics }: { metrics: FrontEndMetric[] }) {
                 <strong className={styles.smallLabel}>{metric.name}</strong>
               </td>
               <td className={styles.infoText} colSpan={metric.isPump ? 1 : 2}>
-                <FrontEndValue metric={metric} />
+                <div className={styles.metricValueWrapper}>
+                 <strong className={styles.metricValueInput}>{metric.value}</strong>
+                 {metric.measurement !== '' ? <span className={styles.metricMeasurement}>{metric.measurement}</span> : null}
+               </div>
               </td>
             </tr>
           ))}

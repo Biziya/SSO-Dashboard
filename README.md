@@ -54,7 +54,7 @@ src/
       <Name>Table.tsx        one component per table
       <...>.module.css       table styles for that page
       types.ts               row types the tables receive as props
-      helpers (MetricValue, ValueInput, textTone, progressArc) where needed
+      helpers (MetricValue, ValueInput, progressArc) where needed
   styles/variables.css     shared design values (shell, MudBlazor palette)
   styles/tableConstants.css  table line width, line colour and corner radius
   styles/global.css        reset and base typography only
@@ -70,7 +70,7 @@ dashboard drawer, so each can change without affecting the others.
 ### Table styling
 
 Every table sits in a frame (`.table-frame`, or `.note-frame` for the eluent Note) that draws the
-outline with the shared `--table-radius` (7px) and clips header backgrounds to the rounded corners.
+outline with the shared `--table-radius` (5px) and clips header backgrounds to the rounded corners.
 All table lines (outline, header separators, inner grid, and the bordered Note areas) use
 `--table-border`, built from `--table-border-width` (2px) and `--table-border-color` (#000).
 Tables use `border-collapse: collapse` with `border-style: hidden`, so their own edge borders are hidden

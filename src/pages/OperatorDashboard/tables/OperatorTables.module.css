@@ -2,7 +2,7 @@
  * Table styles for this page (ported from the Blazor page stylesheet).
  * Every table sits in a .table-frame: the rounded, bordered outline shared
  * by all tables in the app. Radius, line width and line colour come from
- * --table-radius and --table-border in styles/variables.css.
+ * --table-radius and --table-border in styles/tableConstants.css.
  */
 
 .table-frame {
@@ -159,16 +159,7 @@
   overflow-x: auto;
 }
 
-.table-frame .resin-transfer-table th,
-.table-frame .resin-transfer-table td {
-  white-space: nowrap;
-  overflow: visible;
-}
-
 .table-frame .resin-transfer-table td.editable-cell > .edit-input {
-  min-width: 25px;
-  padding: 4px 5px;
-  text-align: center;
   white-space: nowrap;
 }
 

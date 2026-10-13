@@ -1,7 +1,11 @@
 import { cx } from '../../../utils/cx';
-import type { AnalysisSample } from './types';
+import type { AnalysisSample, TextTone } from './types';
 import styles from './OperatorTables.module.css';
-import { toneClass } from './textTone';
+const toneClass: Record<TextTone, string | undefined> = {
+  '': undefined,
+  'info-text': styles.infoText,
+  'danger-text': styles.dangerText,
+};
 
 /** U+ and pH can be typed in, and the U+ colour picked (B = blue, R = red). Nothing is saved. */
 export function AnalysisResultTable({ samples }: { samples: AnalysisSample[] }) {

@@ -30,7 +30,7 @@ function pointAt(angleDegrees: number): Point {
  * The filled wedge for a percentage: null when empty, "full" when complete,
  * otherwise an SVG path from the centre along the arc.
  */
-export function progressWedge(percent: number): string | 'full' | null {
+export function progressWedge(percent: number): string | null {
   const clamped = Math.min(Math.max(percent, 0), 100);
 
   if (clamped === 0) {

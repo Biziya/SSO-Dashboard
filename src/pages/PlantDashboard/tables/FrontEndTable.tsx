@@ -22,30 +22,21 @@ export function FrontEndTable({ metrics }: FrontEndTableProps) {
           <col className={styles.frontEndValueCol} />
         </colgroup>
         <tbody>
-          {metrics.map((metric, index) =>
-            metric.isPump ? (
-              <tr key={metric.name}>
-                {index === firstPumpIndex ? (
-                  <td rowSpan={pumpCount}>
-                    <strong className={styles.smallLabel}>DEBIT</strong>
-                  </td>
-                ) : null}
-                <td className={cx(styles.center, styles.infoText, styles.pumpName)}>{metric.name}</td>
-                <td className={styles.infoText}>
-                  <MetricValue value={metric.value} unit={metric.measurement} />
-                </td>
-              </tr>
-            ) : (
-              <tr key={metric.name}>
-                <td>
-                  <strong className={styles.smallLabel}>{metric.name}</strong>
-                </td>
-                <td className={styles.infoText} colSpan={2}>
-                  <MetricValue value={metric.value} unit={metric.measurement} />
-                </td>
-              </tr>
-            ),
-          )}
+          {metrics.map((metric, index) => (
+           <tr key={metric.name}>
+             {metric.isPump && index === firstPumpIndex ? (
+               <td rowSpan={pumpCount}>
+                 <strong className={styles.smallLabel}>DEBIT</strong>
+               </td>
+             ) : null}
+             <td className={metric.isPump ? cx(styles.center, styles.infoText, styles.pumpName) : undefined}>
+               {metric.isPump ? metric.name : <strong className={styles.smallLabel}>{metric.name}</strong>}
+             </td>
+             <td className={styles.infoText} colSpan={metric.isPump ? undefined : 2}>
+               <MetricValue value={metric.value} unit={metric.measurement} />
+             </td>
+           </tr>
+         ))}
         </tbody>
       </table>
     </div>
