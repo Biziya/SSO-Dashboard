@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { cx } from '../../../utils/cx';
-import type { DashboardHeaderData, ShiftCode } from '../types';
+import type { DashboardHeaderData, ShiftCode, ViewAtMoment } from '../types';
 import styles from '../PlantDashboardPage.module.css';
+import { ViewAtPicker } from './ViewAtPicker';
 
 const shiftClass: Record<ShiftCode, string> = {
   DS: styles.shiftDs ?? '',
@@ -13,11 +15,13 @@ interface DashboardHeaderProps {
 }
 
 /**
- * Title, team, shift, update stamp and LTI counter. The historical "View at"
- * picker and the Capture button are shown but not wired: snapshots and
- * screenshots need the backend.
+ * Title, team, shift, update stamp, LTI counter and the "View at" picker.
+ * The confirmed moment is only shown: loading a past snapshot needs the
+ * backend. The Capture button is hidden.
  */
 export function DashboardHeader({ header }: DashboardHeaderProps) {
+  const [viewAt, setViewAt] = useState<ViewAtMoment | null>(null);
+
   return (
     <header>
       <div className={styles.headerRow}>
@@ -35,14 +39,7 @@ export function DashboardHeader({ header }: DashboardHeaderProps) {
             LTI FREE DAYS : <span className={styles.ltiDays}>{header.ltiFreeDays}</span>
           </h4>
 
-          <label className={styles.snapshotPicker}>
-            <span>VIEW AT :</span>
-            <input type="datetime-local" aria-label="Show the dashboard as it stood at this time" />
-          </label>
-
-          <button type="button" className={styles.captureButton} title="Save a PNG of this page">
-            Capture
-          </button>
+          <ViewAtPicker value={viewAt} onConfirm={setViewAt} onReturnToLive={() => setViewAt(null)} />
         </div>
       </div>
     </header>

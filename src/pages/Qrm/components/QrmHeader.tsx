@@ -1,6 +1,6 @@
-import type { ProgressPercent } from '../types';
+import { ProgressCircle } from '../tables/ProgressCircle';
+import type { ProgressPercent } from '../tables/types';
 import styles from '../QrmPage.module.css';
-import { ProgressCircle } from './ProgressCircle';
 
 interface QrmHeaderProps {
   year: number;
@@ -18,7 +18,7 @@ export function QrmHeader({ year, saveState, legendSteps }: QrmHeaderProps) {
         {legendSteps.map((step) => (
           <div key={step} className={styles.qrmLegendItem}>
             <span className={styles.qrmLegendLabel}>{step} %</span>
-            <ProgressCircle percent={step} showLabel={false} />
+            <ProgressCircle percent={step} size="legend" />
           </div>
         ))}
       </div>

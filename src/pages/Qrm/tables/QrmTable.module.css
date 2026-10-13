@@ -1,0 +1,169 @@
+/* QRM board table and status circles (ported from QrmPage.razor.css). */
+
+/* Rounded outline; the board scrolls sideways below its minimum width. */
+.table-frame {
+  overflow-x: auto;
+  border: 2px solid #111;
+  border-radius: var(--table-radius);
+  background: #fff;
+}
+
+.qrm-table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  border-style: hidden;
+  table-layout: fixed;
+}
+
+.qrm-table th,
+.qrm-table td {
+  padding: 2px 6px;
+  border: 2px solid #111;
+}
+
+/*
+ * Headings scale down with the window (never above the original 2.3rem) so
+ * the longest one, "Responsible", always fits inside its column.
+ */
+.qrm-table th {
+  background: #fffdf2;
+  color: #222;
+  font-family: 'Luckiest Guy', 'Comic Sans MS', cursive;
+  font-size: clamp(1.1rem, 1.9vw, 2.3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  text-align: center;
+  overflow-wrap: normal;
+}
+
+/* Column widths add up to 100%: with table-layout fixed, widths that
+   overflowed were scaled down unevenly and clipped the dates. */
+.col-number {
+  width: 5%;
+}
+
+.col-task {
+  width: 38%;
+}
+
+.col-who {
+  width: 17%;
+}
+
+.col-date {
+  width: 14%;
+}
+
+.col-status {
+  width: 12%;
+}
+
+.number-cell {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.status-cell {
+  padding: 2px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Inputs sit flush in the cell so the grid still reads as a drawn table. */
+.qrm-input {
+  width: 100%;
+  padding: 7px 2px;
+  border: 0;
+  background: transparent;
+  color: #111;
+  font-family: inherit;
+  font-size: clamp(1rem, 1.25vw, 1.5rem);
+  font-weight: 500;
+}
+
+.qrm-input.center {
+  text-align: center;
+}
+
+.qrm-input:focus {
+  outline: 2px solid #0087bd;
+  outline-offset: -2px;
+  background: #f2fbff;
+}
+
+.qrm-task-input {
+  min-height: 3.4rem;
+  overflow: auto;
+  font-family: inherit;
+  line-height: 1.25;
+  text-align: left;
+  resize: vertical;
+}
+
+/* --- Status circle ---------------------------------------------------- */
+.qrm-status-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.qrm-status-button:hover .qrm-circle {
+  transform: scale(1.08);
+}
+
+.qrm-status-button:focus-visible {
+  outline: 2px solid #0087bd;
+  outline-offset: 2px;
+}
+
+.qrm-circle {
+  width: 68px;
+  height: 68px;
+  display: block;
+  flex: 0 0 auto;
+  transition: transform 0.12s ease;
+}
+
+.legend-circle {
+  width: 28px;
+  height: 28px;
+}
+
+.qrm-fill {
+  fill: #17a34a;
+}
+
+.qrm-outline {
+  fill: none;
+  stroke: #111;
+  stroke-width: 3;
+}
+
+.qrm-crosshair {
+  stroke: #111;
+  stroke-width: 2;
+}
+
+/* Centred on the circle: text-anchor centres it horizontally, and dy in
+   ProgressCircle drops the baseline by half the digit height so the
+   figures sit on the vertical centre whatever the font's line metrics.
+   Haloed so it stays readable over filled and empty parts. */
+.qrm-circle-value {
+  fill: #111;
+  stroke: #fff;
+  stroke-width: 5px;
+  stroke-linejoin: round;
+  paint-order: stroke;
+  font-family: 'Baloo 2', Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  text-anchor: middle;
+}

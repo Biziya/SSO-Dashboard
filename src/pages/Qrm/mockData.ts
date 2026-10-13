@@ -1,4 +1,5 @@
-import type { ProgressPercent, QrmBoard, QrmRow } from './types';
+import type { ProgressPercent, QrmRow } from './tables/types';
+import type { QrmBoard } from './types';
 
 export const legendSteps: ProgressPercent[] = [25, 50, 75, 100];
 

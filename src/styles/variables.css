@@ -31,4 +31,7 @@
   --shell-link: #087844;
   --page-background: #f4f7f6;
   --sidebar-width: 260px;
+
+  /* Outer corner radius shared by every table frame */
+  --table-radius: 7px;
 }

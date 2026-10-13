@@ -1,6 +1,6 @@
 import { usePageTitle } from '../../hooks/usePageTitle';
 import { QrmHeader } from './components/QrmHeader';
-import { QrmTable } from './components/QrmTable';
+import { QrmTable } from './tables/QrmTable';
 import { legendSteps, qrmBoardMock } from './mockData';
 import styles from './QrmPage.module.css';
 

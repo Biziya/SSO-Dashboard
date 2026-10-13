@@ -1,0 +1,224 @@
+/* "VIEW AT" picker in the dashboard header. Sizes follow the header's --font-scale. */
+
+.view-at {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: calc(12px * var(--font-scale));
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 6px;
+  border: 1px solid var(--line, #d4ded9);
+  border-radius: 6px;
+  background: #fff;
+  color: #111;
+  font-family: inherit;
+  font-size: calc(12px * var(--font-scale));
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.trigger:hover {
+  border-color: #9fb2a9;
+}
+
+.placeholder {
+  color: #74817b;
+}
+
+.trigger-icon {
+  font-size: 18px;
+  color: #444;
+}
+
+.live-button {
+  padding: 5px 14px;
+  border: 1px solid var(--line, #d4ded9);
+  border-radius: 6px;
+  background: #fff;
+  color: #111;
+  font-size: calc(12px * var(--font-scale));
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.live-button:hover {
+  background: #eef6f2;
+}
+
+/* --- Popup ------------------------------------------------------------ */
+.popup {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 50;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid var(--line, #d4ded9);
+  border-radius: var(--table-radius);
+  background: #fff;
+  color: #111;
+  box-shadow: var(--mud-elevation-8);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  white-space: normal;
+}
+
+.month-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.month-label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.month-button {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #444;
+  cursor: pointer;
+}
+
+.month-button:hover {
+  background: #eef6f2;
+}
+
+.calendar {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.calendar th {
+  padding: 4px 0;
+  color: #74817b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.calendar td {
+  padding: 1px;
+  text-align: center;
+}
+
+.day {
+  width: 34px;
+  height: 32px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #111;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.day:hover {
+  background: #eef6f2;
+}
+
+.today {
+  border-color: #078d4c;
+}
+
+.selected,
+.selected:hover {
+  background: #078d4c;
+  color: #fff;
+  font-weight: 700;
+}
+
+.time-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line, #d4ded9);
+  font-weight: 700;
+}
+
+.time-fields {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.time-select {
+  padding: 3px 6px;
+  border: 1px solid var(--line, #d4ded9);
+  border-radius: 6px;
+  background: #fff;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.draft-value {
+  flex: 1 1 auto;
+  color: #74817b;
+  font-size: 12px;
+}
+
+.cancel-button,
+.ok-button {
+  min-width: 64px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cancel-button {
+  border: 1px solid var(--line, #d4ded9);
+  background: #fff;
+  color: #111;
+}
+
+.cancel-button:hover {
+  background: #eef6f2;
+}
+
+.ok-button {
+  border: 1px solid #078d4c;
+  background: #078d4c;
+  color: #fff;
+}
+
+.ok-button:hover:not(:disabled) {
+  background: #06733e;
+}
+
+.ok-button:disabled {
+  border-color: #c9d3ce;
+  background: #c9d3ce;
+  cursor: not-allowed;
+}
+
+/* On narrow screens the field wraps to the left edge, so the popup opens rightwards. */
+@media (max-width: 700px) {
+  .popup {
+    right: auto;
+    left: 0;
+    max-width: calc(100vw - 24px);
+  }
+}

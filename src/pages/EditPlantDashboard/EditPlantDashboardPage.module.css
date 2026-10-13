@@ -51,31 +51,6 @@
   text-align: center;
 }
 
-.dashboard-shell table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-
-.dashboard-shell th,
-.dashboard-shell td {
-  padding: 6px 7px;
-  border: 1px solid var(--line);
-  font-size: 12px;
-}
-
-.dashboard-shell td.center {
-  padding: 6px 7px;
-  border: 1px solid var(--line);
-  font-size: 15px;
-  text-align: center;
-  font-weight: 400;
-}
-
-.dashboard-shell th {
-  background: var(--header-bg);
-}
-
 .dashboard-shell .top-left-grid,
 .dashboard-shell .split-grid {
   display: grid;
@@ -86,7 +61,7 @@
   grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
 }
 
-.dashboard-shell .top-left-grid > .card {
+.dashboard-shell .top-left-grid > * {
   height: 150px;
 }
 
@@ -133,46 +108,10 @@
   font-weight: 800;
 }
 
-.dashboard-shell .resin-transfer-table {
-  height: 100%;
-}
-
-.dashboard-shell .resin-transfer-table th,
-.dashboard-shell .resin-transfer-table td {
-  padding: 0;
-}
-
 .dashboard-shell .resin-title {
   height: 28px;
   font-size: 12px;
   background-color: #ccc;
-}
-
-.dashboard-shell .title-bg-color {
-  background-color: #ccc;
-}
-
-.dashboard-shell .value-heading {
-  width: 26%;
-}
-
-.dashboard-shell .transfer-heading {
-  width: 23%;
-  height: 26px;
-  font-size: 12px;
-}
-
-.dashboard-shell .section-value-table td:last-child {
-  text-align: right;
-  overflow-wrap: anywhere;
-}
-
-.dashboard-shell .section-value-table td.editable-cell > .edit-input {
-  max-width: none;
-}
-
-.dashboard-shell .front-end-table tr {
-  height: 35px;
 }
 
 .dashboard-shell .tank-position-grid {
@@ -200,27 +139,6 @@
 .dashboard-shell .tank-position-item small {
   margin-top: 1px;
   line-height: 1.1;
-}
-
-.dashboard-shell .table-card {
-  overflow-x: auto;
-}
-
-.dashboard-shell .operations-table {
-  min-width: 680px;
-}
-
-.dashboard-shell .storage-table {
-  min-width: 500px;
-}
-
-.dashboard-shell .operations-table th,
-.dashboard-shell .operations-table td {
-  white-space: nowrap;
-}
-
-.dashboard-shell .samples-card {
-  min-height: 150px;
 }
 
 .dashboard-shell .comment-update-section {
@@ -260,76 +178,6 @@
   box-shadow: inset 0 0 0 2px var(--green);
 }
 
-.dashboard-shell .edit-input {
-  width: 100%;
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-  color: inherit;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  outline: 0;
-  font: inherit;
-  font-size: 15px;
-  font-weight: 400;
-  text-align: inherit;
-}
-
-.dashboard-shell .edit-input:focus {
-  box-shadow: inset 0 -2px 0 var(--green);
-}
-
-.dashboard-shell td.editable-cell {
-  padding: 0;
-}
-
-.dashboard-shell td.calculated-cell {
-  background: rgba(0, 135, 189, 0.08);
-  font-weight: 600;
-  color: #0f5b78;
-}
-
-.dashboard-shell td.editable-cell > .edit-input {
-  width: 100%;
-  height: 100%;
-  min-height: 25px;
-  display: block;
-  padding: 6px 7px;
-}
-
-.dashboard-shell td.editable-cell > .edit-input:focus {
-  box-shadow: none;
-}
-
-.dashboard-shell td.editable-cell:focus-within {
-  box-shadow: inset 0 0 0 2px var(--green);
-}
-
-.dashboard-shell .status-tile .edit-input {
-  color: #fff;
-  background: transparent;
-  font-weight: 800;
-  text-align: center;
-}
-
-.dashboard-shell .storage-status-input {
-  padding-left: 25px !important;
-}
-
-.dashboard-shell td.status-edit-cell {
-  position: relative;
-}
-
-.dashboard-shell td.status-edit-cell .ok-indicator {
-  position: absolute;
-  top: 50%;
-  left: 7px;
-  z-index: 1;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
 .dashboard-shell .update-button {
   width: 180px;
   min-height: 42px;
@@ -347,19 +195,6 @@
 .dashboard-shell .update-button:disabled {
   cursor: wait;
   opacity: 0.65;
-}
-
-.dashboard-shell .ok-indicator,
-.dashboard-shell .success-text {
-  color: var(--green);
-}
-
-.dashboard-shell .danger-text {
-  color: var(--red);
-}
-
-.dashboard-shell .info-text {
-  color: var(--blue);
 }
 
 @media (max-width: 1250px) {
@@ -452,47 +287,8 @@
   cursor: pointer;
 }
 
-.dashboard-shell .resin-card {
-  overflow-x: auto;
-}
-
-.dashboard-shell .resin-transfer-table th,
-.dashboard-shell .resin-transfer-table td {
-  white-space: nowrap;
-  overflow: visible;
-}
-
-.dashboard-shell .resin-transfer-table td.editable-cell > .edit-input {
-  min-width: 25px;
-  padding: 4px 5px;
-  text-align: center;
-  white-space: nowrap;
-}
-
 .dashboard-shell .top-left-grid {
   grid-template-columns: minmax(0, 1.05fr) minmax(230px, 0.95fr);
-}
-
-.dashboard-shell .resin-transfer-table {
-  width: 100%;
-  table-layout: fixed;
-}
-
-.dashboard-shell .resin-transfer-table .resin-number-col {
-  width: 24px;
-}
-
-.dashboard-shell .resin-transfer-table th,
-.dashboard-shell .resin-transfer-table td {
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.dashboard-shell .resin-transfer-table td.editable-cell > .edit-input {
-  width: 100%;
-  min-width: 0;
-  padding: 4px 2px;
-  text-align: center;
 }
 
 .dashboard-shell .tank-letter-select {
@@ -521,153 +317,6 @@
   text-align: center;
 }
 
-.dashboard-shell .metric-value-wrapper {
-  width: 100%;
-  min-height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 4px;
-  padding: 0 6px;
-}
-
-.dashboard-shell .metric-value-input {
-  flex: 1;
-  min-width: 0;
-  padding: 6px 0;
-  text-align: right;
-}
-
-.dashboard-shell .metric-measurement {
-  flex: 0 0 auto;
-  font-size: 11px;
-  font-weight: 700;
-  white-space: nowrap;
-  padding-top: 5px;
-}
-
-.dashboard-shell .ok-indicator.status-ok {
-  color: var(--green);
-}
-
-.dashboard-shell .ok-indicator.status-nok {
-  color: var(--red);
-}
-
-.dashboard-shell .ok-indicator.status-empty {
-  color: transparent;
-}
-
-.dashboard-shell .tank-level-table {
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-}
-
-.dashboard-shell .tank-level-table .group-title-header {
-  width: 38px;
-  min-width: 38px;
-  max-width: 38px;
-  padding: 0;
-}
-
-.dashboard-shell .tank-level-table td.group-title-cell {
-  position: relative;
-  width: 38px;
-  min-width: 38px;
-  max-width: 38px;
-  padding: 0;
-  overflow: hidden;
-  vertical-align: middle;
-}
-
-.dashboard-shell .tank-level-table .group-title-text {
-  position: absolute;
-  inset: 6px 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  line-height: 1.1;
-  white-space: nowrap;
-}
-
-.dashboard-shell .tank-level-table .group-title-text strong {
-  display: block;
-  font-size: 10px;
-}
-
-.dashboard-shell .tank-level-table .group-title-text span {
-  display: block;
-}
-
-.dashboard-shell .tank-level-table .group-title-text sub {
-  font-size: 0.7em;
-}
-
-.dashboard-shell .tank-level-table td.tank-name-cell {
-  padding: 6px 7px;
-  text-align: left !important;
-  vertical-align: middle;
-}
-
-.dashboard-shell .front-end-table {
-  width: 100%;
-  table-layout: fixed;
-}
-
-.dashboard-shell .front-end-table col.front-end-label-col {
-  width: 25%;
-}
-
-.dashboard-shell .front-end-table col.front-end-name-col {
-  width: 40%;
-}
-
-.dashboard-shell .front-end-table col.front-end-value-col {
-  width: 35%;
-}
-
-.dashboard-shell .lab-events-container {
-  width: 100%;
-  height: 100%;
-}
-
-.dashboard-shell .lab-events-table {
-  width: 100%;
-  height: 72%;
-  table-layout: fixed;
-}
-
-.dashboard-shell .lab-events-table tbody,
-.dashboard-shell .lab-events-table tr {
-  height: 100%;
-}
-
-.dashboard-shell .lab-events-label {
-  width: 25%;
-  vertical-align: middle;
-  text-align: left;
-}
-
-.dashboard-shell .lab-events-value {
-  height: 100%;
-  padding: 0;
-}
-
-.dashboard-shell .lab-events-textarea {
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 8px;
-  border: 0;
-  outline: 0;
-  resize: none;
-  font: inherit;
-  box-sizing: border-box;
-}
-
 .dashboard-shell .rich-comment-card {
   display: grid;
   grid-template-columns: 40px minmax(0, 1fr);
@@ -693,13 +342,6 @@
 .dashboard-shell .rich-editor-container {
   min-width: 0;
   width: 100%;
-}
-
-.dashboard-shell .metric-unit {
-  margin-left: 3px;
-  font-size: 0.75em;
-  color: #5a6b63;
-  white-space: nowrap;
 }
 
 .prep-drawer {
@@ -792,22 +434,6 @@
 
 }
 
-.dashboard-shell .storage-table th,
-.dashboard-shell .storage-table td,
-.dashboard-shell .samples-card th,
-.dashboard-shell .samples-card td {
-  padding: 2px 6px;
-  line-height: 1.2;
-}
-
-.dashboard-shell .samples-card tbody td:first-child {
-  white-space: nowrap;
-}
-
-.dashboard-shell .samples-card {
-  min-height: 0;
-}
-
 .dashboard-shell .lti-derived {
   margin: 4px 0 0;
   font-size: 12px;
@@ -815,111 +441,19 @@
   color: #078d4c;
 }
 
-.dashboard-shell .storage-table tbody td,
-.dashboard-shell .storage-table tbody th {
-  height: 52px;
-  padding: 2px 7px;
-}
-
-.dashboard-shell .lab-table tbody td,
-.dashboard-shell .lab-table tbody th {
-  height: 30px;
-  padding: 2px 7px;
-}
-
-.dashboard-shell .samples-card {
-  min-height: 0;
-}
-
 .dashboard-shell .comment-card,
 .dashboard-shell .comment-card textarea {
   min-height: 190px;
-}
-
-/* --- Inline styles and small rules from the Blazor markup --- */
-.center {
-  text-align: center;
 }
 
 .title-times {
   font-size: 16px;
 }
 
-.operation-row {
-  height: 32px;
-}
-
-.process-column {
-  width: 11%;
-}
-
-.process-name {
-  white-space: pre-line;
-}
-
-.operations-card {
-  padding-bottom: 5px;
-}
-
 .dashboard-shell .storage-row {
   display: flex;
   gap: 4px;
-}
-
-.dashboard-shell .tank-level-table {
-  background-color: white;
-}
-
-.pump-select {
-  border: none;
-}
-
-.width15 {
-  width: 15%;
-}
-
-.width40 {
-  width: 40%;
-}
-
-/*
- * The panels' own <style> blocks (EditPlantOverviewPanel.razor and
- * EditOperationsPanel.razor). They were global in Blazor and sat after the
- * scoped stylesheet, so they are kept last and at single-class specificity.
- */
-.resin-date-time-cell {
-  padding: 2px 4px;
-  vertical-align: middle;
-}
-
-.color-edit-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-}
-
-.text-color-select {
-  height: 20px;
-  padding: 1px 1px;
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  background: #fff;
-  font-size: 8px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.text-color-select:focus {
-  outline: none;
-  box-shadow: 0 0 0 1px var(--green);
-}
-
-.info-text {
-  color: #0087bd !important;
-}
-
-.danger-text {
-  color: #df2028 !important;
+  overflow-x: auto;
 }
 
 .team-shift-lti-row {

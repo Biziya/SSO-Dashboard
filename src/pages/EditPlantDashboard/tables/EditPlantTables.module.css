@@ -1,0 +1,503 @@
+/*
+ * Table styles for this page (ported from the Blazor page stylesheet).
+ * Every table sits in a .table-frame: the rounded, bordered outline shared
+ * by all tables in the app (radius from --table-radius).
+ */
+
+.table-frame {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--table-radius);
+}
+
+.table-frame h2 {
+  margin: 0;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  text-align: center;
+}
+
+/* The frame draws the rounded outline, so the table edge borders are hidden. */
+.table-frame table {
+  width: 100%;
+  border-collapse: collapse;
+  border-style: hidden;
+  table-layout: fixed;
+}
+
+.table-frame th,
+.table-frame td {
+  padding: 6px 7px;
+  border: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.table-frame td.center {
+  padding: 6px 7px;
+  border: 1px solid var(--line);
+  font-size: 15px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.table-frame th {
+  background: var(--header-bg);
+}
+
+.table-frame .resin-transfer-table {
+  height: 100%;
+}
+
+.table-frame .resin-transfer-table th,
+.table-frame .resin-transfer-table td {
+  padding: 0;
+}
+
+.table-frame .resin-title {
+  height: 28px;
+  font-size: 12px;
+  background-color: #ccc;
+}
+
+.table-frame .title-bg-color {
+  background-color: #ccc;
+}
+
+.table-frame .value-heading {
+  width: 26%;
+}
+
+.table-frame .transfer-heading {
+  width: 23%;
+  height: 26px;
+  font-size: 12px;
+}
+
+.table-frame .section-value-table td:last-child {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.table-frame .section-value-table td.editable-cell > .edit-input {
+  max-width: none;
+}
+
+.table-frame .front-end-table tr {
+  height: 35px;
+}
+
+.table-frame.table-card {
+  overflow-x: auto;
+}
+
+.table-frame .operations-table {
+  min-width: 680px;
+}
+
+.table-frame .storage-table {
+  min-width: 500px;
+}
+
+.table-frame .operations-table th,
+.table-frame .operations-table td {
+  white-space: nowrap;
+}
+
+.table-frame.samples-card {
+  min-height: 150px;
+}
+
+.table-frame .edit-input {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: inherit;
+}
+
+.table-frame .edit-input:focus {
+  box-shadow: inset 0 -2px 0 var(--green);
+}
+
+.table-frame td.editable-cell {
+  padding: 0;
+}
+
+.table-frame td.calculated-cell {
+  background: rgba(0, 135, 189, 0.08);
+  font-weight: 600;
+  color: #0f5b78;
+}
+
+.table-frame td.editable-cell > .edit-input {
+  width: 100%;
+  height: 100%;
+  min-height: 25px;
+  display: block;
+  padding: 6px 7px;
+}
+
+.table-frame td.editable-cell > .edit-input:focus {
+  box-shadow: none;
+}
+
+.table-frame td.editable-cell:focus-within {
+  box-shadow: inset 0 0 0 2px var(--green);
+}
+
+.table-frame .storage-status-input {
+  padding-left: 25px !important;
+}
+
+.table-frame td.status-edit-cell {
+  position: relative;
+}
+
+.table-frame td.status-edit-cell .ok-indicator {
+  position: absolute;
+  top: 50%;
+  left: 7px;
+  z-index: 1;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.table-frame .ok-indicator,
+.table-frame .success-text {
+  color: var(--green);
+}
+
+.table-frame .danger-text {
+  color: var(--red);
+}
+
+.table-frame .info-text {
+  color: var(--blue);
+}
+
+.table-frame.resin-card {
+  overflow-x: auto;
+}
+
+.table-frame .resin-transfer-table th,
+.table-frame .resin-transfer-table td {
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.table-frame .resin-transfer-table td.editable-cell > .edit-input {
+  min-width: 25px;
+  padding: 4px 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.table-frame .resin-transfer-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table-frame .resin-transfer-table .resin-number-col {
+  width: 24px;
+}
+
+.table-frame .resin-transfer-table th,
+.table-frame .resin-transfer-table td {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.table-frame .resin-transfer-table td.editable-cell > .edit-input {
+  width: 100%;
+  min-width: 0;
+  padding: 4px 2px;
+  text-align: center;
+}
+
+.table-frame .metric-value-wrapper {
+  width: 100%;
+  min-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 0 6px;
+}
+
+.table-frame .metric-value-input {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 0;
+  text-align: right;
+}
+
+.table-frame .metric-measurement {
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding-top: 5px;
+}
+
+.table-frame .ok-indicator.status-ok {
+  color: var(--green);
+}
+
+.table-frame .ok-indicator.status-nok {
+  color: var(--red);
+}
+
+.table-frame .ok-indicator.status-empty {
+  color: transparent;
+}
+
+.table-frame .tank-level-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.table-frame .tank-level-table .group-title-header {
+  width: 38px;
+  min-width: 38px;
+  max-width: 38px;
+  padding: 0;
+}
+
+.table-frame .tank-level-table td.group-title-cell {
+  position: relative;
+  width: 38px;
+  min-width: 38px;
+  max-width: 38px;
+  padding: 0;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.table-frame .tank-level-table .group-title-text {
+  position: absolute;
+  inset: 6px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.table-frame .tank-level-table .group-title-text strong {
+  display: block;
+  font-size: 10px;
+}
+
+.table-frame .tank-level-table .group-title-text span {
+  display: block;
+}
+
+.table-frame .tank-level-table .group-title-text sub {
+  font-size: 0.7em;
+}
+
+.table-frame .tank-level-table td.tank-name-cell {
+  padding: 6px 7px;
+  text-align: left !important;
+  vertical-align: middle;
+}
+
+.table-frame .front-end-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table-frame .front-end-table col.front-end-label-col {
+  width: 25%;
+}
+
+.table-frame .front-end-table col.front-end-name-col {
+  width: 40%;
+}
+
+.table-frame .front-end-table col.front-end-value-col {
+  width: 35%;
+}
+
+.table-frame .lab-events-container {
+  width: 100%;
+  height: 100%;
+}
+
+.table-frame .lab-events-table {
+  width: 100%;
+  height: 72%;
+  table-layout: fixed;
+}
+
+.table-frame .lab-events-table tbody,
+.table-frame .lab-events-table tr {
+  height: 100%;
+}
+
+.table-frame .lab-events-label {
+  width: 25%;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.table-frame .lab-events-value {
+  height: 100%;
+  padding: 0;
+}
+
+.table-frame .lab-events-textarea {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  border: 0;
+  outline: 0;
+  resize: none;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.table-frame .metric-unit {
+  margin-left: 3px;
+  font-size: 0.75em;
+  color: #5a6b63;
+  white-space: nowrap;
+}
+
+.table-frame .storage-table th,
+.table-frame .storage-table td,
+.table-frame.samples-card th,
+.table-frame.samples-card td {
+  padding: 2px 6px;
+  line-height: 1.2;
+}
+
+.table-frame.samples-card tbody td:first-child {
+  white-space: nowrap;
+}
+
+.table-frame.samples-card {
+  min-height: 0;
+}
+
+.table-frame .storage-table tbody td,
+.table-frame .storage-table tbody th {
+  height: 52px;
+  padding: 2px 7px;
+}
+
+.table-frame .lab-table tbody td,
+.table-frame .lab-table tbody th {
+  height: 30px;
+  padding: 2px 7px;
+}
+
+.table-frame.samples-card {
+  min-height: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.operation-row {
+  height: 32px;
+}
+
+.process-column {
+  width: 11%;
+}
+
+.process-name {
+  white-space: pre-line;
+}
+
+.operations-card {
+  padding-bottom: 5px;
+}
+
+.table-frame .tank-level-table {
+  background-color: white;
+}
+
+.pump-select {
+  border: none;
+}
+
+.width15 {
+  width: 15%;
+}
+
+.width40 {
+  width: 40%;
+}
+
+.resin-date-time-cell {
+  padding: 2px 4px;
+  vertical-align: middle;
+}
+
+.color-edit-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.text-color-select {
+  height: 20px;
+  padding: 1px 1px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: #fff;
+  font-size: 8px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.text-color-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--green);
+}
+
+.info-text {
+  color: #0087bd !important;
+}
+
+.danger-text {
+  color: #df2028 !important;
+}
+
+/* --- Frames that are not plain cards --- */
+.table-frame.tank-level-frame {
+  overflow-x: auto;
+}
+
+/* Keeps the storage table's 500px minimum, as when it sat directly in the row. */
+.table-frame.storage-frame {
+  flex: 1 1 auto;
+  min-width: 502px;
+}
+
+.table-frame.storage-frame .storage-table {
+  height: 100%;
+}
+
+/* Lab counts and the Lab Events note share one frame. */
+.lab-events-container {
+  border-top: 1px solid var(--line);
+}

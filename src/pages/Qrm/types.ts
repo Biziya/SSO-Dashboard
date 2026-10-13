@@ -1,14 +1,4 @@
-/** Progress is shown as a quartered circle: 0, 25, 50, 75 or 100 percent. */
-export type ProgressPercent = 0 | 25 | 50 | 75 | 100;
-
-export interface QrmRow {
-  number: number;
-  task: string;
-  responsible: string;
-  startDate: string;
-  finishDate: string;
-  progressPercent: ProgressPercent;
-}
+import type { QrmRow } from './tables/types';
 
 export interface QrmBoard {
   year: number;

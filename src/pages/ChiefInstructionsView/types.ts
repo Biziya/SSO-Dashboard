@@ -1,4 +1,4 @@
-import type { EluentInstruction } from '../../components/EluentPreparationTable/types';
+import type { EluentInstruction } from './tables/types';
 
 export interface SeniorInstructionView {
   instruction: EluentInstruction;

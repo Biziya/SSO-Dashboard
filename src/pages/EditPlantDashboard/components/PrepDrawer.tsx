@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { EluentPreparationTable } from '../../../components/EluentPreparationTable/EluentPreparationTable';
-import type { EluentInstruction } from '../../../components/EluentPreparationTable/types';
+
 import { Icon } from '../../../components/Icon/Icon';
 import { MudButton } from '../../../components/Mud/MudButton';
 import { cx } from '../../../utils/cx';
+import { EluentPreparationTable } from '../tables/EluentPreparationTable';
+import type { EluentInstruction } from '../tables/types';
 import styles from '../EditPlantDashboardPage.module.css';
 
 /** The eluent preparation table in a right-hand drawer, opened by an edge tab. */
@@ -28,7 +29,7 @@ export function PrepDrawer({ instruction }: { instruction: EluentInstruction }) 
           <h2>Eluent, brine &amp; acid solution preparation (Seniors)</h2>
         </header>
         <div className={styles.prepDrawerBody}>
-          <EluentPreparationTable data={instruction} context="drawer" />
+          <EluentPreparationTable data={instruction} />
         </div>
         <footer className={styles.prepDrawerFooter}>
           <MudButton color="info">Update preparation</MudButton>

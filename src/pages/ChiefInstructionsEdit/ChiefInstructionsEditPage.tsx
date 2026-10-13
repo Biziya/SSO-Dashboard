@@ -1,4 +1,4 @@
-import { EluentPreparationTable } from '../../components/EluentPreparationTable/EluentPreparationTable';
+import { EluentPreparationTable } from './tables/EluentPreparationTable';
 import { MudButton } from '../../components/Mud/MudButton';
 import { MudChip } from '../../components/Mud/MudChip';
 import { usePageTitle } from '../../hooks/usePageTitle';
@@ -27,7 +27,7 @@ export function ChiefInstructionsEditPage() {
 
       <div className={styles.dashboardShell}>
         <main className={styles.dashboardGrid}>
-          <EluentPreparationTable data={instruction} context="page" />
+          <EluentPreparationTable data={instruction} />
         </main>
         <div className={styles.buttonContainer}>
           <MudButton color="info">Update</MudButton>

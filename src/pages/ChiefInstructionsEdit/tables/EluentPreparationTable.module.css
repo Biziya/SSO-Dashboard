@@ -1,0 +1,152 @@
+/*
+ * Eluent preparation tables on the Chiefs page.
+ *
+ * Every table and the Note sit in a rounded frame (--table-radius). All
+ * lines, outer and inner, are one weight and colour (--ep-line); the frame
+ * draws the outline and the tables hide their own edge borders, so no line
+ * is doubled.
+ */
+
+.column {
+  --ep-line: #000;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eluent-page {
+  width: 960px;
+  padding: 10px;
+  color: #000;
+  background: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+.eluent-page h2 {
+  margin: 0 0 6px 0;
+  text-align: left;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.eluent-page h3 {
+  margin: 4px 0 4px 0;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.table-frame,
+.note-frame {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--ep-line);
+  border-radius: var(--table-radius);
+}
+
+.table-frame {
+  margin-bottom: 8px;
+}
+
+.eluent-page table {
+  width: 100%;
+  border-collapse: collapse;
+  border-style: hidden;
+  table-layout: fixed;
+}
+
+.eluent-page th,
+.eluent-page td {
+  height: 34px;
+  padding: 4px 6px;
+  border: 1px solid var(--ep-line);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.eluent-page td {
+  font-weight: 500;
+}
+
+.eluent-page th {
+  background: #f8faf9;
+}
+
+.blank {
+  border: none !important;
+  background: transparent !important;
+}
+
+.tank {
+  white-space: nowrap;
+}
+
+.tgt {
+  background: #f4dddd !important;
+}
+
+.main-table tbody tr:nth-child(-n + 6) th,
+.main-table tbody tr:nth-child(-n + 6) td {
+  background: #d9d9d9;
+}
+
+.editable-cell {
+  padding: 0 !important;
+  background: #ffffff !important;
+}
+
+.editable-cell:focus-within {
+  box-shadow: inset 0 0 0 2px #078d4c;
+}
+
+.calculated-cell {
+  background: #d9d9d9 !important;
+  color: #000;
+  font-weight: 700;
+}
+
+.side-label {
+  width: 90px;
+}
+
+.sub-section {
+  width: 100%;
+}
+
+/* Entered values are blue; calculated ones stay black on grey. */
+.edit-input {
+  width: 100%;
+  height: 100%;
+  min-height: 25px;
+  display: block;
+  padding: 6px 7px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #0087bd;
+  font: inherit;
+  font-weight: inherit;
+  text-align: center;
+}
+
+.edit-input:focus {
+  background-color: #fff8c5;
+}
+
+.note-input {
+  height: 80px;
+  min-height: 80px;
+  padding: 6px 8px;
+  font-weight: 400;
+  text-align: left;
+  resize: vertical;
+}
+
+.note-frame:focus-within {
+  box-shadow: 0 0 0 2px #078d4c;
+}
