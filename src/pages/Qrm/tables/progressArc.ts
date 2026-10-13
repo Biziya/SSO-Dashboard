@@ -1,15 +1,17 @@
 /**
  * Geometry of the status circle (viewBox 0 0 100 100).
  *
- * The fill starts at the bottom-left of the circle, 7:30 on a clock face,
- * and sweeps clockwise in proportion to the percentage.
+ * The circle is four equal quarters, each worth 25%. The fill starts in the
+ * bottom-left quarter (at 6 o'clock) and runs clockwise:
+ *   25% bottom-left, 50% + top-left, 75% + top-right, 100% all four.
+ * Values in between fill the next quarter proportionally.
  */
 
 export const center = 50;
 export const radius = 40;
 
-/** 7:30 on a clock, in SVG degrees (0 = 3 o'clock, increasing clockwise). */
-const startAngle = 135;
+/** 6 o'clock, where the bottom-left quarter begins, in SVG degrees (0 = 3 o'clock, increasing clockwise). */
+const startAngle = 90;
 
 interface Point {
   x: number;
@@ -47,8 +49,12 @@ export function progressWedge(percent: number): string | 'full' | null {
   return `M${center},${center} L${start.x},${start.y} A${radius},${radius} 0 ${largeArc} 1 ${end.x},${end.y} Z`;
 }
 
-/** Quarter marks drawn through the centre, on the diagonals where each 25% step ends. */
-export const quarterMarks: Array<[Point, Point]> = [
-  [pointAt(startAngle), pointAt(startAngle + 180)],
-  [pointAt(startAngle + 90), pointAt(startAngle + 270)],
+/**
+ * The upright dividers (one horizontal, one vertical line) that split the
+ * circle into its four quarters. Nothing is rotated: the fill wedge is
+ * computed from its start angle above.
+ */
+export const crosshair: Array<[Point, Point]> = [
+  [{ x: center - radius, y: center }, { x: center + radius, y: center }],
+  [{ x: center, y: center - radius }, { x: center, y: center + radius }],
 ];

@@ -1,6 +1,6 @@
 import { cx } from '../../../utils/cx';
 import type { ProgressPercent } from './types';
-import { center, progressWedge, quarterMarks, radius } from './progressArc';
+import { center, crosshair, progressWedge, radius } from './progressArc';
 import styles from './QrmTable.module.css';
 
 /** Digits rise about 0.62-0.7em above the baseline (Baloo 2, Arial); dropping it by half centres them. */
@@ -12,7 +12,10 @@ interface ProgressCircleProps {
   size: 'row' | 'legend';
 }
 
-/** Status circle filled clockwise from 7:30, with the percentage centred inside. */
+/**
+ * Status circle: four upright quarters filled clockwise from the bottom-left
+ * (see progressArc). The label stays upright and centred.
+ */
 export function ProgressCircle({ percent, size }: ProgressCircleProps) {
   const wedge = progressWedge(percent);
   const showLabel = size === 'row';
@@ -23,7 +26,7 @@ export function ProgressCircle({ percent, size }: ProgressCircleProps) {
       {wedge !== null && wedge !== 'full' ? <path d={wedge} className={styles.qrmFill} /> : null}
 
       <circle cx={center} cy={center} r={radius} className={styles.qrmOutline} />
-      {quarterMarks.map(([from, to]) => (
+      {crosshair.map(([from, to]) => (
         <line key={`${from.x}-${from.y}`} x1={from.x} y1={from.y} x2={to.x} y2={to.y} className={styles.qrmCrosshair} />
       ))}
 

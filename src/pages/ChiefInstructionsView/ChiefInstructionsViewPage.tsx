@@ -1,5 +1,5 @@
 import { EluentPreparationTable } from './tables/EluentPreparationTable';
-import { MudButton } from '../../components/Mud/MudButton';
+import { UpdateButton } from '../../components/UpdateButton/UpdateButton';
 import { usePageTitle } from '../../hooks/usePageTitle';
 import { InstructionUpdatedAlert } from './components/InstructionUpdatedAlert';
 import { seniorInstructionMock } from './mockData';
@@ -27,7 +27,7 @@ export function ChiefInstructionsViewPage() {
           <EluentPreparationTable data={instruction} />
         </main>
         <div className={styles.buttonContainer}>
-          <MudButton color="info">Update</MudButton>
+          <UpdateButton>Update</UpdateButton>
         </div>
       </div>
     </>

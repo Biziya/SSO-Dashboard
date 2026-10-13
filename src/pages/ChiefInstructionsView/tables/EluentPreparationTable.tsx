@@ -220,7 +220,7 @@ export function EluentPreparationTable({ data }: EluentPreparationTableProps) {
           </table>
         </div>
 
-        <div className={`${styles.tableFrame} ${styles.targetFrame}`}>
+        <div className={styles.tableFrame}>
           <table className={styles.targetTable}>
             <tbody>
               <tr>

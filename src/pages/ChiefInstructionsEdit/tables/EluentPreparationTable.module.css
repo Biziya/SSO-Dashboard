@@ -2,13 +2,12 @@
  * Eluent preparation tables on the Chiefs page.
  *
  * Every table and the Note sit in a rounded frame (--table-radius). All
- * lines, outer and inner, are one weight and colour (--ep-line); the frame
+ * lines, outer and inner, use the shared --table-border; the frame
  * draws the outline and the tables hide their own edge borders, so no line
  * is doubled.
  */
 
 .column {
-  --ep-line: #000;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -42,7 +41,7 @@
 .note-frame {
   overflow: hidden;
   background: #fff;
-  border: 1px solid var(--ep-line);
+  border: var(--table-border);
   border-radius: var(--table-radius);
 }
 
@@ -61,7 +60,7 @@
 .eluent-page td {
   height: 34px;
   padding: 4px 6px;
-  border: 1px solid var(--ep-line);
+  border: var(--table-border);
   font-size: 14px;
   font-weight: 700;
   line-height: 1.15;

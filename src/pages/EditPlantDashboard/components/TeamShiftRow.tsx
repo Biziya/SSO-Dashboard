@@ -1,4 +1,5 @@
 import { MudOutlinedDatePicker } from '../../../components/Mud/MudPickerField';
+import { UpdateButton } from '../../../components/UpdateButton/UpdateButton';
 import { MudSelect } from '../../../components/Mud/MudSelect';
 import type { TeamShiftFields } from '../types';
 import styles from '../EditPlantDashboardPage.module.css';
@@ -18,9 +19,7 @@ export function TeamShiftRow({ fields }: { fields: TeamShiftFields }) {
         <p className={styles.ltiDerived}>{fields.ltiFreeDays} LTI free days</p>
       </div>
       <div className={styles.buttonContainer}>
-        <button type="button" className={styles.updateButton}>
-          UPDATE
-        </button>
+        <UpdateButton>UPDATE</UpdateButton>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@
 /* Rounded outline; the board scrolls sideways below its minimum width. */
 .table-frame {
   overflow-x: auto;
-  border: 2px solid #111;
+  border: var(--table-border);
   border-radius: var(--table-radius);
   background: #fff;
 }
@@ -19,7 +19,7 @@
 .qrm-table th,
 .qrm-table td {
   padding: 2px 6px;
-  border: 2px solid #111;
+  border: var(--table-border);
 }
 
 /*

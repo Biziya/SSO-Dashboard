@@ -1,21 +1,22 @@
 /*
  * Table styles for this page (ported from the Blazor page stylesheet).
  * Every table sits in a .table-frame: the rounded, bordered outline shared
- * by all tables in the app (radius from --table-radius).
+ * by all tables in the app. Radius, line width and line colour come from
+ * --table-radius and --table-border in styles/variables.css.
  */
 
 .table-frame {
   min-width: 0;
   overflow: hidden;
   background: #fff;
-  border: 1px solid var(--line);
+  border: var(--table-border);
   border-radius: var(--table-radius);
 }
 
 .table-frame h2 {
   margin: 0;
   padding: 7px 10px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: var(--table-border);
   font-size: 12px;
   text-align: center;
 }
@@ -31,13 +32,13 @@
 .table-frame th,
 .table-frame td {
   padding: 6px 7px;
-  border: 1px solid var(--line);
+  border: var(--table-border);
   font-size: 12px;
 }
 
 .table-frame td.center {
   padding: 6px 7px;
-  border: 1px solid var(--line);
+  border: var(--table-border);
   font-size: 15px;
   text-align: center;
   font-weight: 400;
@@ -490,7 +491,7 @@
 /* Keeps the storage table's 500px minimum, as when it sat directly in the row. */
 .table-frame.storage-frame {
   flex: 1 1 auto;
-  min-width: 502px;
+  min-width: calc(500px + 2 * var(--table-border-width));
 }
 
 .table-frame.storage-frame .storage-table {
@@ -499,5 +500,23 @@
 
 /* Lab counts and the Lab Events note share one frame. */
 .lab-events-container {
-  border-top: 1px solid var(--line);
+  border-top: var(--table-border);
+}
+
+/* A heading inside a header cell: the cell's own bottom line is the separator. */
+.table-frame th h2 {
+  border-bottom: 0;
+}
+
+/* "Lab Events:" may wrap (as on the limited page) rather than run under the
+   cell line; the drums rule above keeps first cells on one line. */
+.table-frame.samples-card tbody td.lab-events-label {
+  white-space: normal;
+}
+
+/* A title directly in a frame grows to fit its text instead of being held to
+   the 26px band (which left too little room once the frame line is drawn). */
+.table-frame > h2.resin-title {
+  height: auto;
+  min-height: 26px;
 }

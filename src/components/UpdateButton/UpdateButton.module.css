@@ -1,0 +1,49 @@
+/* Shared blue Update button (MudBlazor "info" filled look). */
+
+.update-button {
+  height: 36px;
+  min-width: 96px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border: 1px solid var(--mud-info);
+  border-radius: 4px;
+  background-color: var(--mud-info);
+  color: #fff;
+  font-family: var(--mud-font-family);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: var(--mud-elevation-2);
+  cursor: pointer;
+  transition: background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.update-button:hover:not(:disabled) {
+  border-color: var(--mud-info-darken);
+  background-color: var(--mud-info-darken);
+  box-shadow: var(--mud-elevation-4);
+}
+
+.update-button:active:not(:disabled) {
+  border-color: #0a6bbc;
+  background-color: #0a6bbc;
+  box-shadow: none;
+}
+
+.update-button:focus-visible {
+  outline: 2px solid #0a4f8a;
+  outline-offset: 2px;
+}
+
+.update-button:disabled {
+  border-color: #b9c4cc;
+  background-color: #b9c4cc;
+  color: #f4f6f8;
+  box-shadow: none;
+  cursor: not-allowed;
+}

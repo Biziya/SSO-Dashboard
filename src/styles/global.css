@@ -1,4 +1,5 @@
 @import './variables.css';
+@import './tableConstants.css';
 
 /* Reset equivalent to the one MudBlazor's stylesheet applied to the Blazor app. */
 *,

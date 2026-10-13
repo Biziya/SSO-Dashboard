@@ -206,25 +206,6 @@
   white-space: pre-wrap;
 }
 
-.dashboard-shell .update-button {
-  width: 180px;
-  min-height: 42px;
-  border: 2px solid #111;
-  background: #fff;
-  font-size: 14px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.dashboard-shell .update-button:hover {
-  background: var(--page-bg);
-}
-
-.dashboard-shell .update-button:disabled {
-  cursor: wait;
-  opacity: 0.65;
-}
-
 @media (max-width: 1250px) {
   .dashboard-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -252,10 +233,6 @@
 
   .dashboard-shell .comment-card {
     grid-template-columns: 75px minmax(0, 1fr);
-  }
-
-  .dashboard-shell .update-button {
-    width: 100%;
   }
 
 }

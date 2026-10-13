@@ -34,14 +34,6 @@
   cursor: default;
 }
 
-.button-info {
-  background-color: var(--mud-info);
-}
-
-.button-info:hover:not(:disabled) {
-  background-color: var(--mud-info-darken);
-}
-
 .button-success {
   background-color: var(--mud-success);
 }

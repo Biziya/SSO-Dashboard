@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { Icon } from '../../../components/Icon/Icon';
-import { MudButton } from '../../../components/Mud/MudButton';
+import { UpdateButton } from '../../../components/UpdateButton/UpdateButton';
 import { cx } from '../../../utils/cx';
 import { EluentPreparationTable } from '../tables/EluentPreparationTable';
 import type { EluentInstruction } from '../tables/types';
@@ -32,7 +32,7 @@ export function PrepDrawer({ instruction }: { instruction: EluentInstruction }) 
           <EluentPreparationTable data={instruction} />
         </div>
         <footer className={styles.prepDrawerFooter}>
-          <MudButton color="info">Update preparation</MudButton>
+          <UpdateButton>Update preparation</UpdateButton>
         </footer>
       </aside>
     </>

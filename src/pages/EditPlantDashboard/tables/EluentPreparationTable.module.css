@@ -1,8 +1,9 @@
 /*
- * Eluent preparation tables in the drawer: the EP sheet as designed (2px
- * black grid, 17px type, 930px tables). Each table and the Note sit in a
- * rounded frame (--table-radius) that draws the outline; the tables hide
- * their own edge borders.
+ * Eluent preparation tables in the drawer: the EP sheet as designed (17px
+ * type, 930px tables). Each table and the Note sit in a rounded frame
+ * (--table-radius) that draws the outline; every line, the Target table's
+ * included, uses the shared --table-border, and the tables hide their own
+ * edge borders so no line is doubled.
  */
 
 .eluent-page {
@@ -32,7 +33,7 @@
 .note-frame {
   overflow: hidden;
   background: #fff;
-  border: 2px solid #000;
+  border: var(--table-border);
   border-radius: var(--table-radius);
 }
 
@@ -54,7 +55,8 @@
 }
 
 .main-table,
-.sub-table {
+.sub-table,
+.target-table {
   width: 930px;
   table-layout: fixed;
   font-size: 17px;
@@ -63,10 +65,12 @@
 .main-table th,
 .main-table td,
 .sub-table th,
-.sub-table td {
+.sub-table td,
+.target-table th,
+.target-table td {
   height: 34px;
   padding: 4px 6px;
-  border: 2px solid #000;
+  border: var(--table-border);
   line-height: 1.15;
   text-align: center;
   vertical-align: middle;
@@ -74,7 +78,8 @@
 }
 
 .main-table td,
-.sub-table td {
+.sub-table td,
+.target-table td {
   font-weight: 500;
 }
 

@@ -43,6 +43,7 @@ src/
     Icon/                  Material icons used by MudBlazor
     Mud/                   look-alikes of the MudBlazor controls in use
                            (button, alert, chip, select, text field, pickers)
+    UpdateButton/          the one blue style for every Update button
   pages/<Page>/
     <Page>Page.tsx         page layout: composes components and tables
     <Page>Page.module.css  layout and non-table styles (CSS Module)
@@ -54,8 +55,8 @@ src/
       <...>.module.css       table styles for that page
       types.ts               row types the tables receive as props
       helpers (MetricValue, ValueInput, textTone, progressArc) where needed
-  styles/variables.css     shared design values (shell, MudBlazor palette,
-                           --table-radius for table corners)
+  styles/variables.css     shared design values (shell, MudBlazor palette)
+  styles/tableConstants.css  table line width, line colour and corner radius
   styles/global.css        reset and base typography only
   hooks/usePageTitle.ts    sets the browser tab title
   utils/cx.ts              class-name joiner
@@ -68,12 +69,20 @@ dashboard drawer, so each can change without affecting the others.
 
 ### Table styling
 
-Every table sits in a frame (`.table-frame`, or `.note-frame` for the Chiefs/Seniors Note) that draws
-the outline with the shared `--table-radius` (7px) and clips header backgrounds to the rounded corners.
+Every table sits in a frame (`.table-frame`, or `.note-frame` for the eluent Note) that draws the
+outline with the shared `--table-radius` (7px) and clips header backgrounds to the rounded corners.
+All table lines (outline, header separators, inner grid, and the bordered Note areas) use
+`--table-border`, built from `--table-border-width` (2px) and `--table-border-color` (#000).
 Tables use `border-collapse: collapse` with `border-style: hidden`, so their own edge borders are hidden
 and only the frame's outline shows; inner grid lines stay single. Frames that need it scroll sideways
-(`overflow-x: auto`). To change the corner radius everywhere, edit `--table-radius` in
-`styles/variables.css`.
+(`overflow-x: auto`). These values live in one file, `styles/tableConstants.css`; change them there
+and every table on every page follows. No table stylesheet hardcodes a line width, colour or radius.
+
+### Update buttons
+
+Every Update button (dashboard UPDATE, eluent pages' Update, drawer's Update preparation) is the shared
+`components/UpdateButton`, so they share one blue style, including hover, pressed, keyboard-focus and
+disabled states.
 
 CSS class names keep the Blazor kebab-case names (`.resin-title`) and are read in TSX as camelCase
 (`styles.resinTitle`), configured in `vite.config.ts`. Blazor `::deep` rules became plain descendant
@@ -107,5 +116,6 @@ field changes when **OK** is pressed; Cancel, Escape or clicking outside keeps t
 reopening shows the confirmed value. **Live** clears it. Loading a past snapshot needs the backend, so the
 dashboard content does not change. The Capture button is hidden.
 
-**QRM status circles** fill clockwise from the bottom-left (7:30 on a clock) in proportion to the
-percentage; the quarter marks sit on the diagonals where each 25% step ends.
+**QRM status circles** are four upright quarters (25% each). The fill starts in the bottom-left quarter
+and runs clockwise: 25% bottom-left, 50% adds top-left, 75% adds top-right, 100% fills all four; values
+in between fill the next quarter proportionally. The label stays upright and centred.

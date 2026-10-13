@@ -1,0 +1,21 @@
+/*
+ * Table styling constants: the single place that sets how every table in
+ * the app is drawn (main tables, Target tables, the drawer tables and the
+ * bordered Note areas).
+ *
+ * Change a value here and every table follows; no table stylesheet
+ * hardcodes a line width, line colour or corner radius.
+ */
+:root {
+  /* Thickness of every table line: outline, header separators, inner grid. */
+  --table-border-width: 2px;
+
+  /* Colour of every table line. */
+  --table-border-color: #000;
+
+  /* Radius of the rounded outer corners of every table frame. */
+  --table-radius: 5px;
+
+  /* Shorthand used by the table stylesheets. */
+  --table-border: var(--table-border-width) solid var(--table-border-color);
+}

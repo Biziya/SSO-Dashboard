@@ -221,7 +221,7 @@ export function EluentPreparationTable({ data }: EluentPreparationTableProps) {
         </div>
 
         <div className={styles.tableFrame}>
-          <table>
+          <table className={styles.targetTable}>
             <tbody>
               <tr>
                 <th className={`${styles.sideLabel} ${styles.tgt}`} rowSpan={3}>
